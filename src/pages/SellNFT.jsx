@@ -111,24 +111,24 @@ function SellNFT() {
 
       <motion.div 
         style={{ rotateX, rotateY, transformPerspective: 1000 }}
-        className="max-w-sm w-full p-8 border border-sky-400/30 bg-white/50 backdrop-blur-xl shadow-2xl rounded-2xl text-gray-800 z-10 relative overflow-hidden"
+        className="max-w-sm w-full p-8 border border-sky-400/30 bg-indigo-900 backdrop-blur-xl shadow-2xl rounded-2xl text-gray-800 z-10 relative overflow-hidden"
       >
         {/* Spinning Icons with Framer Motion */}
         <motion.h1
-          className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-3 text-sky-600"
+          className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-3 text-white"
         >
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
           >
-            <FaCube className="text-sky-600" />
+            <FaCube className="text-white" />
           </motion.div>
           Sell Your NFT
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
           >
-            <FaCube className="text-sky-600" />
+            <FaCube className="text-white" />
           </motion.div>
         </motion.h1>
 
@@ -139,7 +139,7 @@ function SellNFT() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               NFT ID
             </label>
             <motion.input
@@ -160,7 +160,7 @@ function SellNFT() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               Sale Price (in {currency})
             </label>
             <motion.input
@@ -181,7 +181,7 @@ function SellNFT() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <div className="flex gap-2">
+            <div className="flex gap-2 text-white">
               {['ETH', 'DAI', 'USDC'].map((curr) => (
                 <motion.button
                   key={curr}
@@ -233,15 +233,15 @@ function SellNFT() {
       </motion.div>
 
       {/* Navigation Buttons */}
-      <div className="absolute top-5 left-5 z-50 flex gap-4 bg-white/80 backdrop-blur-sm p-3 rounded-lg border border-green-400/30">
+      <div className="absolute top-5 left-5 z-50 flex gap-4 bg-indigo-900 backdrop-blur-sm p-3 rounded-lg border border-white">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-green-600 hover:text-green-500 flex items-center gap-2"
+          className="text-white-600 hover:text-white-500 flex items-center gap-2"
           onClick={() => navigate(-1)}
         >
-          <span className="text-xl">←</span>
-          <span className="text-sm">Back</span>
+          <span className="text-white">←</span>
+          <span className="text-white ">Back</span>
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -249,8 +249,8 @@ function SellNFT() {
           className="text-green-600 hover:text-green-500 flex items-center gap-2"
           onClick={() => navigate("/")}
         >
-          <span className="text-xl">🏠</span>
-          <span className="text-sm">Home</span>
+        
+          <span className="text-white">Home</span>
         </motion.button>
       
       </div>

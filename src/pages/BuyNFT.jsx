@@ -23,7 +23,7 @@ function BuyNFT() {
         description: "A unique digital art piece.",
         price: "1.5",
         currency: "ETH",
-        image: "https://via.placeholder.com/300",
+        image: "https://images.unsplash.com/photo-1639152201978-931fd2ec8083?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 2,
@@ -31,18 +31,67 @@ function BuyNFT() {
         description: "Limited edition collectible NFT.",
         price: "2.0",
         currency: "ETH",
-        image: "https://via.placeholder.com/300",
+        image: "https://images.pexels.com/photos/17483848/pexels-photo-17483848/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-a-look-inside-how-ai-microchips-are-designed-it-was-created-by-champ-panupong-techawongthawon-as-part-of-the-v.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       },
       {
         id: 3,
-        name: "Metaverse Item #3",
-        description: "A rare item from the metaverse.",
-        price: "3.2",
+        name: "AI Visionary #3",
+        description: "A cutting-edge AI-generated artwork.",
+        price: "3.5",
         currency: "ETH",
-        image: "https://via.placeholder.com/300",
+        image: "https://images.pexels.com/photos/17484970/pexels-photo-17484970/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-how-technology-can-help-humans-learn-and-predict-patterns-in-biology-it-was-created-by-khyati-trehan-as-par.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 4,
+        name: "Metaverse Visionary #4",
+        description: "A rare item from the metaverse.",
+        price: "3.8",
+        currency: "ETH",
+        image: "https://images.pexels.com/photos/18068768/pexels-photo-18068768/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-ethics-research-understanding-the-human-involvement-in-data-labelling-it-was-created-by-ariel-lu-as-part-of.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 5,
+        name: "AI Future #5",
+        description: "An exploration of future AI possibilities.",
+        price: "4.0",
+        currency: "ETH",
+        image: "https://images.pexels.com/photos/18069365/pexels-photo-18069365/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-help-understand-ecosystems-and-identify-species-it-was-created-by-nidia-dias-as-part-of-the-visua.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 6,
+        name: "Metaverse Visionary #6",
+        description: "A rare item from the metaverse.",
+        price: "3.9",
+        currency: "ETH",
+        image: "https://images.pexels.com/photos/17484901/pexels-photo-17484901/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-the-boundaries-set-in-place-to-secure-safe-accountable-biotechnology-it-was-created-by-artist-khyati-treha.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      {
+        id: 7,
+        name: "AI Experience #7",
+        description: "A visionary digital creation from AI.",
+        price: "4.2",
+        currency: "ETH",
+        image: "https://images.pexels.com/photos/17497303/pexels-photo-17497303/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-visualises-the-benefits-and-flaws-of-large-language-models-it-was-created-by-tim-west-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 8,
+        name: "AI Metaverse #8",
+        description: "A glimpse into the metaverse, powered by AI.",
+        price: "3.7",
+        currency: "ETH",
+        image: "https://images.pexels.com/photos/17485658/pexels-photo-17485658/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-adapt-to-an-infinite-amount-of-uses-it-was-created-by-nidia-dias-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 9,
+        name: "AI Collectible #9",
+        description: "Limited edition collectible AI-powered NFT.",
+        price: "2.5",
+        currency: "ETH",
+        image: "https://images.pexels.com/photos/17485608/pexels-photo-17485608/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-is-a-positive-imagining-of-humanities-future-with-ai-enabled-fusion-as-the-primary-energy-source-it-was-created-by-art.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       },
     ]);
   }, []);
+
 
   // Floating Balls Background Component
   const FloatingBall = ({ x, y, delay, size, color }) => (
@@ -74,7 +123,7 @@ function BuyNFT() {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-100 to-green-300 p-4 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center bg-indigo-900 p-4 relative overflow-hidden"
       onMouseMove={(e) => {
         x.set(e.clientX);
         y.set(e.clientY);
@@ -98,28 +147,28 @@ function BuyNFT() {
           onClick={() => navigate(-1)}
           whileHover={{ scale: 1.1, rotate: 5 }}
           whileTap={{ scale: 0.9 }}
-          className="px-5 py-3 bg-white text-green-600 font-bold text-md rounded-lg shadow-lg border border-white hover:bg-green-200 transition-all duration-300"
+          className="px-5 py-3 bg-indigo-900 text-white text-md rounded-lg shadow-lg border border-white hover:bg-indigo-200"
         >
-          ⬅ Back
+          Back
         </motion.button>
         <motion.button
           onClick={() => navigate("/")}
           whileHover={{ scale: 1.1, rotate: -5 }}
           whileTap={{ scale: 0.9 }}
-          className="px-5 py-3 bg-white text-green-600 font-bold text-md rounded-lg shadow-lg border border-white hover:bg-green-200 transition-all duration-300"
+          className="px-5 py-3 bg-indigo-900 text-white text-md rounded-lg shadow-lg border border-white hover:bg-indigo-200 "
         >
-          🏠 Home
+           Home
         </motion.button>
       </div>
 
       {/* Title */}
       <motion.h1
-        className="text-5xl font-extrabold text-green-800 mb-6 drop-shadow-lg z-10"
+        className="text-5xl font-extrabold text-white mb-6 drop-shadow-lg z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        🛒 Buy Exclusive NFTs
+         Buy Exclusive NFTs
       </motion.h1>
 
       {/* NFT Cards with 3D Effect */}
@@ -139,8 +188,8 @@ function BuyNFT() {
               className="w-full h-48 object-cover rounded-xl mb-4"
               whileHover={{ scale: 1.1 }}
             />
-            <h2 className="text-2xl font-bold text-green-800">{nft.name}</h2>
-            <p className="text-sm text-green-700">{nft.description}</p>
+            <h2 className="text-2xl font-bold text-white-800">{nft.name}</h2>
+            <p className="text-sm text-white-700">{nft.description}</p>
             <p className="mt-2 text-lg font-semibold text-green-900">
               {nft.price} {nft.currency}
             </p>

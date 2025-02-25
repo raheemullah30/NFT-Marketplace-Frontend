@@ -87,55 +87,54 @@ function MintNFT() {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden"
-      onMouseMove={(e) => {
-        x.set(e.clientX);
-        y.set(e.clientY);
+    className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-indigo-900"
+    onMouseMove={(e) => {
+      x.set(e.clientX);
+      y.set(e.clientY);
+    }}
+  >
+    {/* Floating Cubes Background */}
+    {[...Array(8)].map((_, i) => (
+      <FloatingCube key={i} x={Math.random() * 100 - 50} y={Math.random() * 100 - 50} delay={i * 2} />
+    ))}
+  
+    {/* Animated Background Gradient */}
+    <motion.div 
+      className="absolute inset-0"
+      animate={{ 
+        background: [
+          "linear-gradient(45deg, #f0fff4, #e6fffa, #ebf8ff, #f0fff4)",
+          "linear-gradient(45deg, #e6fffa, #ebf8ff, #f0fff4, #e6fffa)",
+          "linear-gradient(45deg, #ebf8ff, #f0fff4, #e6fffa, #ebf8ff)",
+          "linear-gradient(45deg, #f0fff4, #e6fffa, #ebf8ff, #f0fff4)"
+        ]
       }}
+      transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+    />
+  
+    {/* Form Container with 3D Effect */}
+    <motion.div 
+      style={{ rotateX, rotateY, transformPerspective: 1000 }}
+      className="max-w-sm w-full p-8 border border-indigo-400/30 bg-indigo-900 backdrop-blur-xl shadow-2xl rounded-2xl text-white-800 z-10 relative overflow-hidden"
     >
-      {/* Floating Cubes Background */}
-      {[...Array(8)].map((_, i) => (
-        <FloatingCube key={i} x={Math.random() * 100 - 50} y={Math.random() * 100 - 50} delay={i * 2} />
-      ))}
-
-      {/* Animated Background Gradient */}
-      <motion.div 
-        className="absolute inset-0"
-        animate={{ 
-          background: [
-            "linear-gradient(45deg, #f0fff4, #e6fffa, #ebf8ff, #f0fff4)",
-            "linear-gradient(45deg, #e6fffa, #ebf8ff, #f0fff4, #e6fffa)",
-            "linear-gradient(45deg, #ebf8ff, #f0fff4, #e6fffa, #ebf8ff)",
-            "linear-gradient(45deg, #f0fff4, #e6fffa, #ebf8ff, #f0fff4)"
-          ]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      />
-
-      {/* Form Container with 3D Effect */}
-      <motion.div 
-        style={{ rotateX, rotateY, transformPerspective: 1000 }}
-        className="max-w-sm w-full p-8 border border-green-400/30 bg-white/50 backdrop-blur-xl shadow-2xl rounded-2xl text-gray-800 z-10 relative overflow-hidden"
+      {/* Spinning Icons */}
+      <motion.h1
+        className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-3 text-green-600"
       >
-        {/* Spinning Icons */}
-        <motion.h1
-          className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-3 text-green-600"
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
         >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-          >
-            <FaCube className="text-green-600" />
-          </motion.div>
-          Mint Your NFT 
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-          >
-            <FaCube className="text-green-600" />
-          </motion.div>
-        </motion.h1>
-
+          <FaCube className="text-green-600" />
+        </motion.div>
+        Mint Your NFT 
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+        >
+          <FaCube className="text-green-600" />
+        </motion.div>
+      </motion.h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           {/* Name Input */}
           <motion.div
@@ -143,7 +142,7 @@ function MintNFT() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               Name
             </label>
             <motion.input
@@ -164,7 +163,7 @@ function MintNFT() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               Description
             </label>
             <motion.input
@@ -185,7 +184,7 @@ function MintNFT() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               Price (in {currency})
             </label>
             <motion.input
@@ -194,7 +193,7 @@ function MintNFT() {
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              className="w-full p-3 bg-white/70 border-2 border-green-400/30 rounded-lg text-gray-800 focus:outline-none focus:border-green-500 transition-all"
+              className="w-full p-3 bg-white/70 border-2 border-green-400/30 rounded-lg text-white focus:outline-none focus:border-white-500 transition-all"
               placeholder="Enter Price"
               required
             />
@@ -206,7 +205,7 @@ function MintNFT() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               Currency
             </label>
             <select
@@ -226,7 +225,7 @@ function MintNFT() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm text-white font-medium mb-2">
               Upload Image
             </label>
             <motion.input
@@ -261,7 +260,7 @@ function MintNFT() {
           className="text-green-600 hover:text-green-500 flex items-center gap-2"
           onClick={() => navigate(-1)}
         >
-          <span className="text-xl">←</span>
+          <span className="text-xl ">←</span>
           <span className="text-sm">Back</span>
         </motion.button>
         <motion.button
@@ -270,7 +269,6 @@ function MintNFT() {
           className="text-green-600 hover:text-green-500 flex items-center gap-2"
           onClick={() => navigate("/")}
         >
-          <span className="text-xl">🏠</span>
           <span className="text-sm">Home</span>
         </motion.button>
       </div>
