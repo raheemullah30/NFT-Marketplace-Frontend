@@ -1,8 +1,13 @@
-# React + Vite
+# NFT Marketplace Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend repository for the NFT Marketplace project. It provides a user interface for browsing, purchasing, and selling NFTs.
 
-Currently, two official plugins are available:
+## Features
+- Browse available NFTs
+- Buy and sell NFTs
+- Connect with blockchain wallets
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/raheemullah30/NFT-Marketplace-Frontend.git
